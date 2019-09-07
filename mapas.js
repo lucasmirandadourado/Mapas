@@ -18,28 +18,37 @@ $(document).on('click', '.estado', function () {
     $('#box-informacoes').html(tabela);
 
     let codigo = this.getAttribute('code');
-    $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}`, function (data) {
+    $.ajax({
+        method: 'GET',
+        dataType: JSON,
+        url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}`,
+        success: function (data) {
 
-        $('#info').html(`<tr>
+            $('#info').html(`<tr>
                 <th scope="row">${data.id}</th>
                 <td>${data.nome}</td>
                 <td>${data.sigla}</td>
                 <td>${data.regiao.nome}</td>
             </tr>`);
+        }
     });
 
-    $.get(`http://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}/microrregioes/`, function (data) {
+    $.ajax({
+        method: 'GET',
+        dataType: JSON,
+        url: `http://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}/microrregioes/`,
+        success: function (data) {
 
-        let row = "";
-        data.forEach(element => {
-            row += `<tr class="row-regiao">
+            let row = "";
+            data.forEach(element => {
+                row += `<tr class="row-regiao">
                         <th class="id-regiao" scope="row">${element.id}</th>
                         <td>${element.nome}</td>
                         <td>${element.mesorregiao.nome}</td>
                     </tr>`
-        });
+            });
 
-        let tabela = `<table class="table">
+            let tabela = `<table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -50,7 +59,8 @@ $(document).on('click', '.estado', function () {
                             <tbody id="regiao">${row}</tbody>
                         </table>`;
 
-        $('#box-informacoes').append(tabela)
+            $('#box-informacoes').append(tabela)
+        }
     });
 });
 
@@ -67,7 +77,7 @@ $(document).on('click', '.row-regiao', function () {
     });
 });
 
-$(document).on('dblclick', '.info-municipes', function () { 
+$(document).on('dblclick', '.info-municipes', function () {
     $('.info-municipes').html('')
- })
+})
 
