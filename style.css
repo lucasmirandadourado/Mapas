@@ -67,21 +67,22 @@ table{
     white-space: normal;
 }
 
-@media(max-width:500px) {
+@media(max-width:900px) {
   .controller {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    justify-content: center;
   }
-
   .info-municipes {
+    width: 485px;
     background-color: #e2e2e2bf;
     position: absolute;
     height: auto;
     border-radius: 5px;
     border-top: 5px solid #00d961;
-    width: 350px;
+    left: 131px;
   }
-  svg {
+
+   svg {
     overflow: hidden;
     vertical-align: middle;
     width: 80%;
