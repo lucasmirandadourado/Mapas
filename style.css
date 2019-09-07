@@ -52,12 +52,14 @@ table{
 }
 
 .info-municipes {
-    width: 485px;
+    flex: 3;
+    left: 9%;
+    top: 9%;
     background-color: #e2e2e2bf;
     position: absolute;
     height: auto;
     border-radius: 5px;
-    border-top: 5px solid #00d961;
+    border-top: 5px solid #00d961; 
 }
 
 .info-municipes > ul {
@@ -67,24 +69,38 @@ table{
     white-space: normal;
 }
 
-@media(max-width:900px) {
+@media(max-width:1200px) {
+  .info-municipes {
+    left: 4%;
+    top: 4%;
+  }
+}
+
+@media(max-width:800px) {
+  .container h1 {
+    margin-top: 29px;
+  }
+
   .controller {
     display: grid;
     justify-content: center;
   }
+
   .info-municipes {
-    width: 485px;
-    background-color: #e2e2e2bf;
-    position: absolute;
-    height: auto;
-    border-radius: 5px;
-    border-top: 5px solid #00d961;
-    left: 131px;
+    left: 20%;
+    top: 12%;
   }
 
    svg {
     overflow: hidden;
     vertical-align: middle;
     width: 80%;
+  }
+}
+
+@media(max-width:400px) {
+  .info-municipes {
+    left: 3%;
+    top: 13%;
   }
 }
