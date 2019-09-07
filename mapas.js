@@ -82,7 +82,7 @@ $(document).on('click', '.row-regiao', function () {
     });
 });
 
-$(document).on('dblclick', '.info-municipes', function () {
+$(document).on('dblclick, touchstart', '.info-municipes', function () {
     $('.info-municipes').html('')
 })
 

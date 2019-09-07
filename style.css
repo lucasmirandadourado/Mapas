@@ -1,34 +1,34 @@
 #svg-map path {
-    fill: #0094d9
-  }
-  
-  #svg-map text {
-    fill: #fff;
-    font: 12px Arial-BoldMT, sans-serif;
-    cursor: pointer
-  }
-  
-  #svg-map a {
-    text-decoration: none
-  }
-  
-  #svg-map a:hover {
-    cursor: pointer;
-    text-decoration: none
-  }
-  
-  #svg-map a:hover path {
-    fill: #003399 !important
-  }
-  
-  #svg-map .circle {
-    fill: #66ccff
-  }
-  
-  #svg-map a:hover .circle {
-    fill: #003399 !important;
-    cursor: pointer
-  }
+  fill: #0094d9
+}
+
+#svg-map text {
+  fill: #fff;
+  font: 12px Arial-BoldMT, sans-serif;
+  cursor: pointer
+}
+
+#svg-map a {
+  text-decoration: none
+}
+
+#svg-map a:hover {
+  cursor: pointer;
+  text-decoration: none
+}
+
+#svg-map a:hover path {
+  fill: #003399 !important
+}
+
+#svg-map .circle {
+  fill: #66ccff
+}
+
+#svg-map a:hover .circle {
+  fill: #003399 !important;
+  cursor: pointer
+}
 .controller {
     display: flex;
 }
@@ -65,4 +65,25 @@ table{
     font-size: 12px;
     padding: 25px 1px 0 37px;
     white-space: normal;
+}
+
+@media(max-width:500px) {
+  .controller {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-municipes {
+    background-color: #e2e2e2bf;
+    position: absolute;
+    height: auto;
+    border-radius: 5px;
+    border-top: 5px solid #00d961;
+    width: 350px;
+  }
+  svg {
+    overflow: hidden;
+    vertical-align: middle;
+    width: 80%;
+  }
 }
