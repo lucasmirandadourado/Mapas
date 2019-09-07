@@ -1,0 +1,68 @@
+#svg-map path {
+    fill: #0094d9
+  }
+  
+  #svg-map text {
+    fill: #fff;
+    font: 12px Arial-BoldMT, sans-serif;
+    cursor: pointer
+  }
+  
+  #svg-map a {
+    text-decoration: none
+  }
+  
+  #svg-map a:hover {
+    cursor: pointer;
+    text-decoration: none
+  }
+  
+  #svg-map a:hover path {
+    fill: #003399 !important
+  }
+  
+  #svg-map .circle {
+    fill: #66ccff
+  }
+  
+  #svg-map a:hover .circle {
+    fill: #003399 !important;
+    cursor: pointer
+  }
+.controller {
+    display: flex;
+}
+#box-mapa{
+    flex: 3;    
+}
+#box-informacoes {
+    flex: 3;
+    background-color: #e8e8e8;
+}
+
+tbody#regiao {
+    display: block;
+    overflow-y: scroll;
+    height: 383px;
+    flex-direction: column;
+    width: 100%;
+}
+table{
+    display: contents;
+}
+
+.info-municipes {
+    width: 485px;
+    background-color: #e2e2e2bf;
+    position: absolute;
+    height: auto;
+    border-radius: 5px;
+    border-top: 5px solid #00d961;
+}
+
+.info-municipes > ul {
+    list-style: none;
+    font-size: 12px;
+    padding: 25px 1px 0 37px;
+    white-space: normal;
+}
