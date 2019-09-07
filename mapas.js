@@ -20,9 +20,8 @@ $(document).on('click', '.estado', function () {
     let codigo = this.getAttribute('code');
     $.ajax({
         method: 'GET',
-        dataType: JSON,
-        headers: { 'Authorization': 'Basic token' },
-        url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}`,
+        dataType: 'json',
+        url: `http://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}`,
         success: function (data) {
 
             $('#info').html(`<tr>
@@ -36,9 +35,8 @@ $(document).on('click', '.estado', function () {
 
     $.ajax({
         method: 'GET',
-        headers: { 'Authorization': 'Basic token' },
-        dataType: JSON,
-        url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}/microrregioes/`,
+        dataType: 'json',
+        url: `http://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}/microrregioes/`,
         success: function (data) {
 
             let row = "";
@@ -70,9 +68,8 @@ $(document).on('click', '.row-regiao', function () {
     let codigo = $(this).find('.id-regiao')[0].innerHTML
     $.ajax({
         method: 'GET',
-        dataType: JSON,
-        headers: { 'Authorization': 'Basic token' },
-        url: `https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes/${codigo}/municipios/`,
+        dataType: 'json',
+        url: `https//servicodados.ibge.gov.br/api/v1/localidades/microrregioes/${codigo}/municipios/`,
         success: function (data) {
             console.log(data)
             let municipes = '<ul>';
