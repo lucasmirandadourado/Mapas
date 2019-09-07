@@ -21,6 +21,7 @@ $(document).on('click', '.estado', function () {
     $.ajax({
         method: 'GET',
         dataType: JSON,
+        headers: { 'Authorization': 'Basic token' },
         url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}`,
         success: function (data) {
 
@@ -35,8 +36,9 @@ $(document).on('click', '.estado', function () {
 
     $.ajax({
         method: 'GET',
+        headers: { 'Authorization': 'Basic token' },
         dataType: JSON,
-        url: `http://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}/microrregioes/`,
+        url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${codigo}/microrregioes/`,
         success: function (data) {
 
             let row = "";
@@ -66,14 +68,20 @@ $(document).on('click', '.estado', function () {
 
 $(document).on('click', '.row-regiao', function () {
     let codigo = $(this).find('.id-regiao')[0].innerHTML
-    $.get(`http://servicodados.ibge.gov.br/api/v1/localidades/microrregioes/${codigo}/municipios/`, function (data) {
-        console.log(data)
-        let municipes = '<ul>';
-        data.forEach(element => {
-            municipes += `<li>${element.nome}</li>`;
-        });
+    $.ajax({
+        method: 'GET',
+        dataType: JSON,
+        headers: { 'Authorization': 'Basic token' },
+        url: `https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes/${codigo}/municipios/`,
+        success: function (data) {
+            console.log(data)
+            let municipes = '<ul>';
+            data.forEach(element => {
+                municipes += `<li>${element.nome}</li>`;
+            });
 
-        $('.info-municipes').html(municipes);
+            $('.info-municipes').html(municipes);
+        }
     });
 });
 
